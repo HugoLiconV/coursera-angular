@@ -23,12 +23,12 @@
       $scope.length = splitedItems.length;
       if ($scope.length === 0) {
         $scope.message = "Please enter data first";
-      } else if ($scope.length > 0 && length <= 3) {
+      } else if ($scope.length > 0 && $scope.length <= 3) {
         $scope.message = "Enjoy";
       } else if ($scope.length > 3) {
         $scope.message = "Too much!";
       }
-      console.log($scope.message);
+      console.log($scope.length);
     };
   }
 })();
