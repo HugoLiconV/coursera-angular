@@ -35,7 +35,7 @@
   NarrowItDownController.$inject = ["MenuSearchService"];
   function NarrowItDownController(MenuSearchService) {
     let narrow = this;
-    narrow.searchTerm = "chicken";
+    narrow.searchTerm = "";
 
     narrow.getMenuItems = () => {
       MenuSearchService.getMatchedMenuItems(narrow.searchTerm).then(result => {
