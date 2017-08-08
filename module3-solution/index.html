@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" ng-app="NarrowItDownApp">
+
+<head>
+  <title>Narrow Down Your Menu Choice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="styles/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <div class="container" ng-controller="NarrowItDownController as menu">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Narrow Down Your Chinese Menu Choice</h1>
+        <div class="form-group">
+          <input type="text" placeholder="search term" class="form-control" ng-model="menu.searchTerm">
+        </div>
+        <div class="form-group narrow-button">
+          <button class="btn btn-primary" ng-click="menu.getMenuItems()">Narrow It Down For Me!</button>
+        </div>
+      </div class="col-sm-12">
+    </div class="row">
+    <!-- 
+    Once your app goes through all the items, it should display the found list of items. 
+    Each item in the list should show the name of the menu item, its short_name, 
+    and the description. 
+     -->
+    <found-items found="menu.found"></found-items>
+    <!-- found-items="...." on-remove="...."  -->
+    <!-- You should also provide a "Don't want this one!" button next to each 
+      item in the list to give the user the ability to remove an item from that 
+      list. -->
+
+    <!-- If nothing is found as a result of the search OR if the user leaves the
+       textbox empty and clicks the "Narrow It Down For Me!" button, you should 
+       simply display the message "Nothing found".
+
+ -->
+  </div>
+
+</body>
+
+</html>
