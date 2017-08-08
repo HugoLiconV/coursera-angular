@@ -31,7 +31,7 @@
     Each item in the list should show the name of the menu item, its short_name, 
     and the description. 
      -->
-    <found-items found="menu.found"></found-items>
+    <found-items found="menu.found" on-remove="menu.removeItem(index)"></found-items>
     <!-- found-items="...." on-remove="...."  -->
     <!-- You should also provide a "Don't want this one!" button next to each 
       item in the list to give the user the ability to remove an item from that 

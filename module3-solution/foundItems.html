@@ -1,23 +1,17 @@
 <!-- <div class="row">
   <div class="col-sm-4" ng-repeat="item in found"> -->
 
-
+<div class="message-result" ng-if="foundList.isEmpty()">Nothing found 🤔</div>
 <div class="card-deck">
-  <div class="card" ng-repeat="item in found">
+  <div class="card" ng-repeat="item in foundList.found">
     <div class="card-block">
       <h3 class="card-title">{{item.name}}</h3>
       <h6 class="card-subtitle mb-2 text-muted">Short Name: {{item.short_name}}</h6>
       <p class="card-text">Description: {{item.description}}</p>
     </div>
     <div class="card-footer">
-      <button ng-click='onRemove({index: $index})' class="btn btn-primary btn-block">Don't want this one!</button>
+      <button ng-click='foundList.onRemove({index: $index})' class="btn btn-primary btn-block">Don't want this one!</button>
     </div>
   </div>
   <!--Card End  -->
 </div>
-<!-- </div>
-</div> -->
-
-
-
-<!--<li ng-repeat="item in menu.found">  -->

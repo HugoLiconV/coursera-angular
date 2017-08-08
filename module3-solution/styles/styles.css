@@ -8,6 +8,10 @@ h1 {
   max-width: 33vw;
 }
 
+.message-result{
+  color: red;
+  font-size: 2em;
+}
 
 input[type="text"] {
   width: 200px;

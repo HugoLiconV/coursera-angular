@@ -15,17 +15,27 @@
       restrict: "E",
       templateUrl: "foundItems.html",
       scope: {
-        found: "<"
-        // onRemove: "&"
-      }
+        found: "<",
+        onRemove: "&"//reference binding
+      },
+      controller: foundItemsController,
+      controllerAs: "foundList",
+      bindToController: true
     };
     return ddo;
+  }
+
+  function foundItemsController() {
+    let list = this;
+    list.isEmpty = () => {
+      return list.found !== undefined && list.found.length <= 0;
+    };
   }
 
   NarrowItDownController.$inject = ["MenuSearchService"];
   function NarrowItDownController(MenuSearchService) {
     let narrow = this;
-    narrow.searchTerm = "";
+    narrow.searchTerm = "chicken";
 
     narrow.getMenuItems = () => {
       MenuSearchService.getMatchedMenuItems(narrow.searchTerm).then(result => {
@@ -34,10 +44,10 @@
       });
     };
 
-    // narrow.removeItem = function(itemIndex) {
-    //   shoppingList.removeItem(itemIndex);
-    //   this.title = origTitle + " (" + list.items.length + " items )";
-    // };
+    narrow.removeItem = function(itemIndex) {
+      console.log('removing...');
+      narrow.found.splice(itemIndex, 1);
+    };
   }
 
   MenuSearchService.$inject = ["$http", "ApiBasePath"];
