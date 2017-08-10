@@ -30,8 +30,8 @@
         params:{ category: categoryShortName}
       })
         .then(result => {
-          console.log(result.data.menu_items);
-          return result.data.menu_items;
+          console.log(result.data);
+          return result.data;
         })
         .catch(error => console.log(error));
     };

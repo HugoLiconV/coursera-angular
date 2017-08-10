@@ -4,7 +4,8 @@
    .component('items',{
      templateUrl: 'src/restaurant/templates/items.component.template.html',
      bindings:{
-        items: '<'
+        items: '<',
+        categoryName: '@'
      }
    });
 }());
