@@ -20,12 +20,12 @@
 
       .state('container',{
         url: '/container',
-        templateUrl: '/src/restaurant/templates/container.template.html'
+        templateUrl: 'src/restaurant/templates/container.template.html'
       })
       //categories
       .state("container.categories", {
         url: "/categories",
-        templateUrl: "/src/restaurant/templates/categories.template.html",
+        templateUrl: "src/restaurant/templates/categories.template.html",
         controller: "CategoriesController as categories",
         //obtener datos de servicio menudata.service
         resolve: {
@@ -41,7 +41,7 @@
       //items
       .state("container.items", {
         url: "/{shortName}",
-        templateUrl: "/src/restaurant/templates/items.template.html",
+        templateUrl: "src/restaurant/templates/items.template.html",
         controller: 'ItemsListController as itemsList',
         resolve: {
           items: [
