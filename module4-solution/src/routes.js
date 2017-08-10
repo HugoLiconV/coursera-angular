@@ -14,13 +14,18 @@
     $stateProvider
       //homepage
       .state("home", {
-        url: "/home",
+        url: "/",
         templateUrl: "src/restaurant/templates/home.template.html"
       })
+
+      .state('container',{
+        url: '/container',
+        templateUrl: '/src/restaurant/templates/container.template.html'
+      })
       //categories
-      .state("categories", {
+      .state("container.categories", {
         url: "/categories",
-        templateUrl: "/src/restaurant/templates/container.template.html",
+        templateUrl: "/src/restaurant/templates/categories.template.html",
         controller: "CategoriesController as categories",
         //obtener datos de servicio menudata.service
         resolve: {
@@ -34,7 +39,7 @@
         }
       })
       //items
-      .state("items", {
+      .state("container.items", {
         url: "/{shortName}",
         templateUrl: "/src/restaurant/templates/items.template.html",
         controller: 'ItemsListController as itemsList',
@@ -42,8 +47,7 @@
           items: [
             "MenuDataService", '$stateParams',
             function(MenuDataService, $stateParams) {
-              console.log(MenuDataService.getItemsForCategory($stateParams.shortName));
-              console.log($stateParams.shortName);
+
               return MenuDataService.getItemsForCategory($stateParams.shortName);
             }
           ]
