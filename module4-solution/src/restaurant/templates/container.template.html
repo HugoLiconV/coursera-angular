@@ -1,18 +1,20 @@
 <div class="home-image cover">
   <div class="main-title">Restaurant Doña Pelos</div>
 </div>
-<nav class="navbar navbar-inverse bg-inverse">
+<!-- <nav class="navbar navbar-inverse bg-inverse">
   <a class="navbar-brand" ui-sref="home">Home</a>
-
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" ui-sref="container.categories">Categories <span class="sr-only">(current)</span></a>
+        <a class="nav-link" ui-sref="categories">Categories <span class="sr-only">(current)</span></a>
       </li>
     </ul>
+</nav> -->
+
+<nav class="navbar  navbar-inverse bg-inverse">
+  <a class="navbar-brand" ui-sref-active="active" ui-sref="home">Doña Pelos</a>
+  <a class="navbar-brand" ui-sref-active="active" ui-sref="container.categories">Categories</a>
 </nav>
-<!-- <categories categories="categories.items"></categories>  -->
-<ui-view></ui-view> 
+<ui-view></ui-view>
 <!-- el atributo categories viene del categories.components, el ="categories.items"
 es porque así se llama el controlador y los datos estan en items,los datos dentro 
 del componente <categories> estan en $ctrl.categories-->
-
