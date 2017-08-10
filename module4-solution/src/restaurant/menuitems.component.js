@@ -2,9 +2,9 @@
    'use strict';
    angular.module('MenuApp')
    .component('items',{
-     templateUrl: 'src/restaurant/templates/items.template.html',
+     templateUrl: 'src/restaurant/templates/items.component.template.html',
      bindings:{
-        // items: '<'
+        items: '<'
      }
    });
 }());

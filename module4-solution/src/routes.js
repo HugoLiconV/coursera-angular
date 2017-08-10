@@ -11,30 +11,43 @@
     // Redirect to home page if no other URL matches
     $urlRouterProvider.otherwise("/home");
 
-
     $stateProvider
       //homepage
       .state("home", {
         url: "/home",
         templateUrl: "src/restaurant/templates/home.template.html"
       })
-     
-      //categoures
+      //categories
       .state("categories", {
         url: "/categories",
-        templateUrl: "/src/restaurant/templates/categories.template.html",
+        templateUrl: "/src/restaurant/templates/container.template.html",
+        controller: "CategoriesController as categories",
+        //obtener datos de servicio menudata.service
         resolve: {
-          //obtener datos de servicio menudata.service
+          items: [
+            "MenuDataService",
+            function(MenuDataService) {
+              console.log(MenuDataService.getAllCategories());
+              return MenuDataService.getAllCategories();
+            }
+          ]
         }
       })
-      /*
       //items
-      .state("categories.items", {
-        url: "/categories/{shortName}",
+      .state("items", {
+        url: "/{shortName}",
         templateUrl: "/src/restaurant/templates/items.template.html",
-        params: {
-          shortName: null
+        controller: 'ItemsListController as itemsList',
+        resolve: {
+          items: [
+            "MenuDataService", '$stateParams',
+            function(MenuDataService, $stateParams) {
+              console.log(MenuDataService.getItemsForCategory($stateParams.shortName));
+              console.log($stateParams.shortName);
+              return MenuDataService.getItemsForCategory($stateParams.shortName);
+            }
+          ]
         }
-      }); */
+      });
   }
 })();

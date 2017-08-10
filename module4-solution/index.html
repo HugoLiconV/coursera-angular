@@ -13,13 +13,14 @@
 </head>
 
 <body>
+
   <ui-view></ui-view>
   <!-- TODO: Home View, Categories List, Imtes -->
   <script src="lib/angular.min.js"></script>
   <script src="lib/angular-ui-router.min.js"></script>
 
   <!-- Modules -->
-  <script src="src/restaurant/menuapp.module.js"></script>
+  <script src="src/restaurant/menu.app.module.js"></script>
   <script src="src/restaurant/data.module.js"></script>
 
   <!-- Routes -->
@@ -27,8 +28,9 @@
 
   <!-- 'MenuApp' module artifacts -->
   <script src="src/restaurant/categories.component.js"></script>
-  <script src="src/restaurant/items.component.js"></script>
-
+  <script src="src/restaurant/menuitems.component.js"></script>
+  <script src="src/restaurant/categories.controller.js"></script>
+  <script src="src/restaurant/items.list.controller.js"></script>
   <!-- 'data' module artifacts -->
   <script src="src/restaurant/menudata.service.js"></script>
 

@@ -26,10 +26,12 @@
   border-radius: 3px;
   padding: 10px;
   font-size: 4em;
-  margin-bottom: 80px;
+  margin: 40px;
 }
 
 .main-content a {
+  margin-top: 40px;
+  display: inline-block;
 	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
 	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
@@ -47,4 +49,24 @@
 .main-content a:hover{
   color: white;
   background: rgba(255,255,255,0.8);
+}
+/*categories  */
+.container{
+  padding-bottom: 20px;
+}
+
+.cover{
+  min-height: 30vh;
+  background-attachment: fixed;
+
+}
+
+.card{
+  min-width: 23vw; 
+  margin: 20px;
+  max-width: 23vw;
+}
+
+.list-group a{
+  margin: 20px 0;
 }

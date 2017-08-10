@@ -1,0 +1,13 @@
+<div class="card-deck">Length: {{$ctrl.items.length}}
+  <div class="card" ng-repeat="item in $ctrl.items">
+    <div class="card-block">
+      <h3 class="card-title">{{item.name}}</h3>
+      <h6 class="card-subtitle mb-2 text-muted">Short Name: {{item.short_name}}</h6>
+      <p class="card-text">Description: {{item.description}}</p>
+    </div>
+    <div class="card-footer">
+      <button ng-click='foundList.onRemove({index: $index})' class="btn btn-primary btn-block">Don't want this one!</button>
+    </div>
+  </div>
+  <!--Card End  -->
+</div>
